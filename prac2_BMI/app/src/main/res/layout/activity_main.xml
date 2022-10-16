@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Here are the existing layout elements, now wrapped in
+         a CoordinatorLayout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A3D5EC"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/lay01btnNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lay01btnYes"
+            app:layout_constraintTop_toBottomOf="@+id/lay01txtQuery" />
+
+        <Button
+            android:id="@+id/lay01btnYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lay01btnNo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lay01txtQuery" />
+
+        <TextView
+            android:id="@+id/lay01txtQuery"
+            android:layout_width="147dp"
+            android:layout_height="52dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/are_you_at_least_20_years_old"
+            android:textAlignment="gravity"
+            android:textColor="#455A64"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/lay01btnNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title01" />
+
+        <TextView
+            android:id="@+id/title01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi_calculator"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            app:layout_constraintBottom_toTopOf="@+id/lay01txtQuery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

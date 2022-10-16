@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude"
+        app:layout_constraintBottom_toTopOf="@+id/latitude_txt"
+        app:layout_constraintEnd_toStartOf="@+id/divider" />
+
+    <EditText
+        android:id="@+id/latitude_txt"
+        android:layout_width="164dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude"
+        app:layout_constraintBottom_toTopOf="@+id/longitude_txt"
+        app:layout_constraintEnd_toEndOf="@+id/latitude_txt" />
+
+    <EditText
+        android:id="@+id/longitude_txt"
+        android:layout_width="164dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/map_btn"
+        app:layout_constraintEnd_toEndOf="@+id/textView3" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/map_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_dialog_map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/longitude_txt" />
+
+    <EditText
+        android:id="@+id/phoneNum_txt"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/dial_btn"
+        app:layout_constraintStart_toEndOf="@+id/divider" />
+
+    <Button
+        android:id="@+id/dial_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Dial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

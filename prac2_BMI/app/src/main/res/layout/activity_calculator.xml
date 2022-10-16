@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CalculatorActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A3D5EC"
+    tools:context=".CalculatorActivity">
+
+    <TextView
+        android:id="@+id/lay03txtUnitsDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_have_selected_metric_imperial_system"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/lay03txtYourWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lay03txtYourWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_weight03"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/lay03seekBarWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtUnitsDisplay" />
+
+    <SeekBar
+        android:id="@+id/lay03seekBarHeight"
+        style="@android:style/Widget.Material.SeekBar"
+        android:layout_width="182dp"
+        android:layout_height="39dp"
+        android:max="250"
+        android:progress="125"
+        app:layout_constraintBottom_toTopOf="@+id/lay03txtHeightDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtYourHeight" />
+
+    <EditText
+        android:id="@+id/lay03txtHeightDisplay"
+        android:layout_width="67dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/lay03txtSymbH"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03seekBarHeight"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/lay03txtYourHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_height03"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/lay03seekBarHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtSymbW" />
+
+    <Button
+        android:id="@+id/lay03btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next03"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtSymbH" />
+
+    <SeekBar
+        android:id="@+id/lay03seekBarWeight"
+        style="@android:style/Widget.Material.SeekBar"
+        android:layout_width="182dp"
+        android:layout_height="39dp"
+        android:max="250"
+        android:progress="125"
+        app:layout_constraintBottom_toTopOf="@+id/lay03txtWeightDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtYourWeight" />
+
+    <EditText
+        android:id="@+id/lay03txtWeightDisplay"
+        android:layout_width="67dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/lay03txtSymbW"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03seekBarWeight"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/lay03txtSymbW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kg_lb"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/lay03txtYourHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtWeightDisplay" />
+
+    <TextView
+        android:id="@+id/lay03txtSymbH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cm_inch"
+        android:textColor="#455A64"
+        app:layout_constraintBottom_toTopOf="@+id/lay03btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lay03txtHeightDisplay" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,25 @@
+TODO:
+
+Make each restaurant display only certain items
+
+Login when customer hits checkout (3 Marks)
+
+Let a logged in customer see order history, including time of orders. (3 Marks)
+
+Home page of the app will include a random list of food items (today's specials) from different
+restaurants. (3 Marks)
+
+Store all data in database upon initialization (5 Marks) Partially done: Need to add initial values
+for restaurants and items as well as time.
+
+Report
+This is for maintenance and other developers who will look after your code. Let
+us assume that new restaurants may want to join your application and provide
+all the data, images, menus, food items, prices etc. Provide a step-by-step
+guide on updating the code to add a new restaurant. You will be asked to do
+the same in your demonstrations. [5 marks]
+
+Mark Deductions 
+1: At least one screen/appearance should be different between the
+Phone and Tablet. The goal is to use the additional spaces in the tablet wisely. Failure
+to do so will lose marks [-2 Marks].

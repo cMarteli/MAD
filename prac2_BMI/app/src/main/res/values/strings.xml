@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="title_activity_unit_choice">unit_choice</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="imperial">Imperial</string>
+    <string name="metric">Metric</string>
+    <string name="your_preferred_system">Your preferred System</string>
+    <string name="_0_0">0.0</string>
+    <string name="your_height">Your height:</string>
+    <string name="your_bmi">Your BMI</string>
+    <string name="your_weight">Your weight:</string>
+    <string name="weight_range">Weight Range</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="are_you_at_least_20_years_old">Are you at least 20 years old?</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="you_have_selected_metric_imperial_system">You have selected metric/imperial system</string>
+    <string name="your_weight03">Your weight</string>
+    <string name="your_height03">Your height</string>
+    <string name="next03">Next</string>
+    <string name="kg_lb">KG/lb</string>
+    <string name="cm_inch">CM/Inch</string>
+</resources>
