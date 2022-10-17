@@ -8,6 +8,7 @@ import android.os.Handler
 import android.util.Log
 import android.view.*
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
@@ -33,6 +34,7 @@ class PhotoGalleryFragment : Fragment() {
     private lateinit var photoRecyclerView: RecyclerView
     private lateinit var thumbnailDownloader: ThumbnailDownloader<ViewHolder>
     private var colCount: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -128,7 +130,7 @@ class PhotoGalleryFragment : Fragment() {
     }
 
     /**
-     * [ViewHolder] Inner class - Holder for recyclerView
+     * [ViewHolder] Inner class - View Holder for recyclerView
      */
     private inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
             val image = itemView.findViewById(R.id.imageView_item) as ImageView
@@ -157,14 +159,11 @@ class PhotoGalleryFragment : Fragment() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val galleryItem = galleryItems[position]
-            val placeholder: Drawable = ContextCompat.getDrawable(
-                requireContext(),
-                R.drawable.placeholder
-            ) ?: ColorDrawable()
             holder.title.text = galleryItem.id //TODO: Debug
-            holder.image.setImageDrawable(placeholder)
             thumbnailDownloader.queueThumbnail(holder, galleryItem.url)
+
         }
+
 
         override fun getItemCount(): Int = galleryItems.size
 
@@ -175,7 +174,6 @@ class PhotoGalleryFragment : Fragment() {
     }
 
     companion object {
-        //fun newInstance() = PhotoGalleryFragment()
         @JvmStatic
         fun newInstance(colCount: Int) =
             PhotoGalleryFragment().apply {
