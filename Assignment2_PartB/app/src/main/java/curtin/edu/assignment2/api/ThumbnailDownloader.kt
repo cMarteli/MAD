@@ -17,6 +17,9 @@ private const val MESSAGE_DOWNLOAD = 0 // used to identify messages as download 
 /**
  * [ThumbnailDownloader] class performs actions on background thread
  * [T] is ThumbnailDownloader's user
+ *  May contain methods from
+ *  Android Programming - the Big Nerd Ranch Guide (Kristin Marsicano, Brian Gardner, Bill Phillips
+ *  etc (2021) source code (Version 1.0) [Source code].
  */
 class ThumbnailDownloader<in T>(
     private val responseHandler: Handler,

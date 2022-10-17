@@ -7,7 +7,11 @@ import android.widget.Switch
 /**
  * [MainActivity] Hold fragments and switch to allow user to select
  * number of columns
- */
+ * @author Caio Marteli (19598552)
+ * Marteli, C (2021) source code (Version 1.0) [Source code]. https://github.com/cMarteli/
+ * Modified and improved October 2022
+ *
+*/
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

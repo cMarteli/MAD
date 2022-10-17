@@ -28,7 +28,9 @@ private const val TAG = "PhotoGalleryFragment"
 private const val COL_COUNT = "param1"
 /**
  * A simple [Fragment] subclass.
- * TODO: Continue from book page 553
+ *  May contain methods from
+ *  Android Programming - the Big Nerd Ranch Guide (Kristin Marsicano, Brian Gardner, Bill Phillips
+ *  etc (2021) source code (Version 1.0) [Source code].
  */
 class PhotoGalleryFragment : Fragment() {
 

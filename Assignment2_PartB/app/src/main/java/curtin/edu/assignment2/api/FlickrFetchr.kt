@@ -21,6 +21,10 @@ private const val TAG = "FlickrFetchr"
 /**
  * A repository class which encapsulates the logic for accessing data from a single
  * source or a set of sources.
+ *  May contain methods from
+ *  Android Programming - the Big Nerd Ranch Guide (Kristin Marsicano, Brian Gardner, Bill Phillips
+ *  etc (2021) source code (Version 1.0) [Source code].
+ * Modified and improved October 2022
  */
 class FlickrFetchr : Callable<LiveData<List<GalleryItem>>> {
     private val flickrApi: FlickrApi
