@@ -1,4 +1,4 @@
-package curtin.edu.assignment2a
+package curtin.edu.assignment2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

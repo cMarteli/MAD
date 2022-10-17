@@ -1,4 +1,4 @@
-package curtin.edu.assignment2a
+package curtin.edu.assignment2
 
 import org.junit.Test
 

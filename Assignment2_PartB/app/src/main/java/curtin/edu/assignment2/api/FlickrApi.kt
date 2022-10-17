@@ -1,4 +1,4 @@
-package curtin.edu.assignment2a.api
+package curtin.edu.assignment2.api
 
 
 import okhttp3.ResponseBody

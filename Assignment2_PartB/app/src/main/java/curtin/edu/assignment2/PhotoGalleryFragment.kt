@@ -1,26 +1,28 @@
-package curtin.edu.assignment2a
+package curtin.edu.assignment2
 
 import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.*
 import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import curtin.edu.assignment2a.api.ThumbnailDownloader
-import curtin.edu.assignment2a.data.GalleryItem
-import curtin.edu.assignment2a.data.PhotoGalleryViewModel
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import curtin.edu.assignment2.api.ImageUploader
+import curtin.edu.assignment2.api.ThumbnailDownloader
+import curtin.edu.assignment2.data.GalleryItem
+import curtin.edu.assignment2.data.PhotoGalleryViewModel
+import java.io.File
+
 
 private const val TAG = "PhotoGalleryFragment"
 private const val COL_COUNT = "param1"
@@ -34,6 +36,7 @@ class PhotoGalleryFragment : Fragment() {
     private lateinit var photoRecyclerView: RecyclerView
     private lateinit var thumbnailDownloader: ThumbnailDownloader<ViewHolder>
     private var colCount: Int = 0
+    //private lateinit var mStorageRef: StorageReference //Firebase reference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,8 +52,9 @@ class PhotoGalleryFragment : Fragment() {
                 val drawable = BitmapDrawable(resources, bitmap)
                 photoHolder.image.setImageDrawable(drawable)
             }
-
         lifecycle.addObserver(thumbnailDownloader.fragmentLifecycleObserver)
+
+        //mStorageRef = FirebaseStorage.getInstance().reference; //Initializes Firebase reference
     }
 
     /**
@@ -138,9 +142,12 @@ class PhotoGalleryFragment : Fragment() {
 
             init {
                 image.setOnClickListener { //displays title on click
-                    val toastText =
-                        (bindingAdapter as PhotoAdapter).getGalleryItem(bindingAdapterPosition).title
-                    Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show()
+                    val name = (bindingAdapter as PhotoAdapter).getGalleryItem(bindingAdapterPosition).title
+                    Toast.makeText(context, name, Toast.LENGTH_SHORT).show()
+
+                    val iup = ImageUploader()
+                    iup.upload(context, image, name)
+
                 }
             }
         }

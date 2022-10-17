@@ -1,4 +1,4 @@
-package curtin.edu.assignment2a.data
+package curtin.edu.assignment2.data
 
 import android.content.Context
 import android.preference.PreferenceManager

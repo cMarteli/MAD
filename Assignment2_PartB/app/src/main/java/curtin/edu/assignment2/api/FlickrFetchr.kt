@@ -1,4 +1,4 @@
-package curtin.edu.assignment2a.api
+package curtin.edu.assignment2.api
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import curtin.edu.assignment2a.data.GalleryItem
+import curtin.edu.assignment2.data.GalleryItem
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -14,7 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import java.util.concurrent.Callable
 
 private const val TAG = "FlickrFetchr"
 
@@ -22,7 +22,7 @@ private const val TAG = "FlickrFetchr"
  * A repository class which encapsulates the logic for accessing data from a single
  * source or a set of sources.
  */
-class FlickrFetchr {
+class FlickrFetchr : Callable<LiveData<List<GalleryItem>>> {
     private val flickrApi: FlickrApi
 
     init {
@@ -40,12 +40,12 @@ class FlickrFetchr {
     }
 
     //Sets gallery to interestingness
-    fun fetchPhotos(): LiveData<List<GalleryItem>> {
+    override fun call(): LiveData<List<GalleryItem>> {
         return fetchPhotoMetadata(flickrApi.fetchPhotos())
     }
 
-    //uses query to pulate gallery
-    fun searchPhotos(query: String): LiveData<List<GalleryItem>> {
+    //uses query to populate gallery
+    fun call(query: String): LiveData<List<GalleryItem>> {
         return fetchPhotoMetadata(flickrApi.searchPhotos(query))
     }
 
@@ -81,4 +81,6 @@ class FlickrFetchr {
         Log.i(TAG, "Decoded bitmap=$bitmap from Response=$response")
         return bitmap
     }
+
+
 }
